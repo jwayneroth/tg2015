@@ -125,14 +125,14 @@ h5, .h5 {
 //////////////////////
 
 .header {
-	background-color: $black;
+	//background-color: $black;
 }
 
 	#logo {
 		margin: 0.75em 0;
 
 		a {
-			color: $white;
+			//color: $white;
 		}
 	}
 
@@ -373,7 +373,7 @@ margin: 0;
 
 	ul {
 		display: inline-block;
-		background-color: $white;
+		//background-color: $white;
 		white-space: nowrap;
 		padding: 0;
 		clear: both;
@@ -402,8 +402,8 @@ margin: 0;
 		color: $blue;
 
 		&:hover, &:focus {
-			background-color: $blue;
-			color: $white;
+			//background-color: $blue;
+			//color: $white;
 		}
 	}
 
@@ -412,8 +412,8 @@ margin: 0;
 		color: $text-color;
 
 		&:hover, &:focus {
-			background-color: $white;
-			color: $text-color;
+			//background-color: $white;
+			//color: $text-color;
 		}
 	}
 
@@ -536,7 +536,7 @@ margin: 0;
 	/* general comment classes */
 	&.alt {}
 	&.odd {
-		background-color: $white;
+		//background-color: $white;
 	}
 	&.even {
 		background: $light-gray;
@@ -670,10 +670,10 @@ margin: 0;
 		}
 	}
 	.no-widgets {
-		background-color: $white;
+		//background-color: $white;
 		padding: 1.5em;
 		text-align: center;
-		border: 1px solid $border-color;
+		//border: 1px solid $border-color;
 		border-radius: 2px;
 		margin-bottom: 1.5em;
 	}
@@ -684,8 +684,8 @@ margin: 0;
 
 .footer {
 	clear: both;
-	background-color: $black;
-	color: $light-gray;
+	//background-color: $black;
+	//color: $light-gray;
 }
 
 	.footer-links {

@@ -1,8 +1,8 @@
 @import "typography";
 @import "variables";
 @import "bootstrap-variables";
-@import "bootstrap-custom";
-@import "mixins";
+//@import "bootstrap-custom";
+//@import "mixins";
 
 /******************************************************************
 Site Name:
@@ -35,11 +35,11 @@ body#tinymce.wp-editor {
 	*********************/
 
 	a, a:visited {
-		color: $link-color;
+		//color: $link-color;
 
 		/* on hover */
 		&:hover, &:focus {
-			color: $link-hover-color;
+			//color: $link-hover-color;
 		}
 
 		/* on click */

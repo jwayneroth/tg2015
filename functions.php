@@ -8,6 +8,88 @@ just edit things like thumbnail sizes, header images,
 sidebars, comments, ect.
 */
 
+
+//////////////////////////////
+//
+// TG CUSTOM
+//
+//////////////////////////////
+
+add_image_size( 'project-slide', 800, 800 );
+add_image_size( 'project-thumb', 260, 175, true );
+
+function tg_page_scripts() {
+	//styles
+	wp_register_style('oxygena', 'http://fonts.googleapis.com/css?family=Oxygen:400,300,700', array(), '', 'all' );
+
+	//scripts
+	//wp_register_script('bootstrap', get_stylesheet_directory_uri() . '/library/js/libs/bootstrap.min.js', array('jquery'));
+	wp_register_script('jquery.cycle.all', get_stylesheet_directory_uri() . '/library/js/jquery.cycle2.min.js', array('jquery'));
+	wp_register_script('jquery.cycle.center', get_stylesheet_directory_uri() . '/library/js/jquery.cycle2.center.min.js', array('jquery', 'jquery.cycle.all'));
+	
+	//enqueue for...
+	//all
+	wp_enqueue_style('oxygena');
+	
+	if(!is_admin()) {
+		//all frontend
+		//wp_enqueue_script('bootstrap');
+		wp_enqueue_script('jquery.cycle.all');
+		wp_enqueue_script('jquery.cycle.center');
+	}
+}
+add_action( 'wp_enqueue_scripts', 'tg_page_scripts' );
+
+// Flush your rewrite rules
+function bones_flush_rewrite_rules() {
+	flush_rewrite_rules();
+}
+add_action( 'after_switch_theme', 'bones_flush_rewrite_rules' );
+
+function tg_custom_post_types() { 
+	// creating (registering) the custom type 
+	register_post_type( 'project', /* (http://codex.wordpress.org/Function_Reference/register_post_type) */
+		// let's now add all the options for this post type
+		array( 'labels' => array(
+			'name' => __( 'Projects', 'bonestheme' ), /* This is the Title of the Group */
+			'singular_name' => __( 'Project', 'bonestheme' ), /* This is the individual type */
+			'all_items' => __( 'All Project', 'bonestheme' ), /* the all items menu item */
+			'add_new' => __( 'Add New', 'bonestheme' ), /* The add new menu item */
+			'add_new_item' => __( 'Add New Project', 'bonestheme' ), /* Add New Display Title */
+			'edit' => __( 'Edit', 'bonestheme' ), /* Edit Dialog */
+			'edit_item' => __( 'Edit Project', 'bonestheme' ), /* Edit Display Title */
+			'new_item' => __( 'New Project', 'bonestheme' ), /* New Display Title */
+			'view_item' => __( 'View Project', 'bonestheme' ), /* View Display Title */
+			'search_items' => __( 'Search Projects', 'bonestheme' ), /* Search Custom Type Title */ 
+			'not_found' =>  __( 'Nothing found in the Database.', 'bonestheme' ), /* This displays if there are no entries yet */ 
+			'not_found_in_trash' => __( 'Nothing found in Trash', 'bonestheme' ), /* This displays if there is nothing in the trash */
+			'parent_item_colon' => ''
+			), /* end of arrays */
+			'description' => __( 'Tamzin Greenhill projects', 'bonestheme' ), /* Custom Type Description */
+			'public' => true,
+			'publicly_queryable' => true,
+			'exclude_from_search' => false,
+			'show_ui' => true,
+			'query_var' => true,
+			'menu_position' => 2, /* this is what order you want it to appear in on the left hand side menu */ 
+			'menu_icon' => get_stylesheet_directory_uri() . '/library/images/custom-post-icon.png', /* the icon for the custom post type menu */
+			'rewrite'	=> array( 'slug' => 'project', 'with_front' => false ), /* you can specify its url slug */
+			'has_archive' => 'project', /* you can rename the slug here */
+			'capability_type' => 'post',
+			'hierarchical' => false,
+			/* the next one is important, it tells what's enabled in the post editor */
+			'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'sticky')
+		) /* end of options */
+	); /* end of register post type */
+	
+	/* this adds your post categories to your custom post type */
+	register_taxonomy_for_object_type( 'category', 'project' );
+	/* this adds your post tags to your custom post type */
+	register_taxonomy_for_object_type( 'post_tag', 'project' );
+	
+}
+add_action( 'init', 'tg_custom_post_types');
+	
 // LOAD BONES CORE (if you remove this, the theme will break)
 require_once( 'library/bones.php' );
 
@@ -250,94 +332,6 @@ function bones_fonts() {
 		'search-form',
 		'comment-form'
 	) );
-
-//////////////////////////////
-//
-// TG CUSTOM
-//
-//////////////////////////////
-
-add_action( 'after_switch_theme', 'bones_flush_rewrite_rules' );
-
-// Flush your rewrite rules
-function bones_flush_rewrite_rules() {
-	flush_rewrite_rules();
-}
-
-// let's create the function for the custom type
-function tg_custom_post_types() { 
-	// creating (registering) the custom type 
-	register_post_type( 'project', /* (http://codex.wordpress.org/Function_Reference/register_post_type) */
-		// let's now add all the options for this post type
-		array( 'labels' => array(
-			'name' => __( 'Projects', 'bonestheme' ), /* This is the Title of the Group */
-			'singular_name' => __( 'Project', 'bonestheme' ), /* This is the individual type */
-			'all_items' => __( 'All Project', 'bonestheme' ), /* the all items menu item */
-			'add_new' => __( 'Add New', 'bonestheme' ), /* The add new menu item */
-			'add_new_item' => __( 'Add New Project', 'bonestheme' ), /* Add New Display Title */
-			'edit' => __( 'Edit', 'bonestheme' ), /* Edit Dialog */
-			'edit_item' => __( 'Edit Projects', 'bonestheme' ), /* Edit Display Title */
-			'new_item' => __( 'New Project', 'bonestheme' ), /* New Display Title */
-			'view_item' => __( 'View Project', 'bonestheme' ), /* View Display Title */
-			'search_items' => __( 'Search Projects', 'bonestheme' ), /* Search Custom Type Title */ 
-			'not_found' =>  __( 'Nothing found in the Database.', 'bonestheme' ), /* This displays if there are no entries yet */ 
-			'not_found_in_trash' => __( 'Nothing found in Trash', 'bonestheme' ), /* This displays if there is nothing in the trash */
-			'parent_item_colon' => ''
-			), /* end of arrays */
-			'description' => __( 'Tamzin Greenhill projects', 'bonestheme' ), /* Custom Type Description */
-			'public' => true,
-			'publicly_queryable' => true,
-			'exclude_from_search' => false,
-			'show_ui' => true,
-			'query_var' => true,
-			'menu_position' => 1, /* this is what order you want it to appear in on the left hand side menu */ 
-			'menu_icon' => get_stylesheet_directory_uri() . '/library/images/custom-post-icon.png', /* the icon for the custom post type menu */
-			'rewrite'	=> array( 'slug' => 'project', 'with_front' => false ), /* you can specify its url slug */
-			'has_archive' => 'project', /* you can rename the slug here */
-			'capability_type' => 'post',
-			'hierarchical' => false,
-			/* the next one is important, it tells what's enabled in the post editor */
-			'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'sticky')
-		) /* end of options */
-	); /* end of register post type */
-	
-	/* this adds your post categories to your custom post type */
-	register_taxonomy_for_object_type( 'category', 'project' );
-	/* this adds your post tags to your custom post type */
-	register_taxonomy_for_object_type( 'post_tag', 'project' );
-	
-}
-
-// adding the function to the Wordpress init
-add_action( 'init', 'tg_custom_post_types');
-	
-	
-function tg_page_scripts() {
-	//styles
-	wp_register_style('oxygena', 'http://fonts.googleapis.com/css?family=Oxygen:400,300,700', array(), '', 'all' );
-
-	//scripts
-	//wp_register_script('bootstrap', get_stylesheet_directory_uri() . '/library/js/libs/bootstrap.min.js', array('jquery'));
-
-	//enqueue for...
-	//all
-	wp_enqueue_style('oxygena');
-	
-	if(!is_admin()) {
-		//all frontend
-		//wp_enqueue_script('bootstrap');
-	}
-}
-add_action( 'wp_enqueue_scripts', 'tg_page_scripts' );
-
-
-
-
-
-
-
-
-
 
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>

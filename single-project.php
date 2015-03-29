@@ -4,18 +4,8 @@
 		<div class="container">
 		
 			<div class="row">
-	
-				<div class="col-sm-2">
-					<ul>
-					<?php global $post; ?>
-					<?php $projects = get_posts(array( 'post_type' => 'project', 'posts_per_page' => -1 )); ?>
-					<?php foreach($projects as $post) : setup_postdata($post); ?>
-						<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-					<?php endforeach; ?>
-					</ul>
-				</div>
 				
-				<div class="col-sm-10">
+				<div class="col-sm-10 col-sm-push-2">
 				
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					<?php if( have_rows('project_gallery') ): ?>
@@ -23,7 +13,7 @@
 					<div class="cycle-slideshow" id="project-slideshow" 
 						data-cycle-log="false" 
 						data-cycle-slides=".slide"
-						data-cycle-timeout=1000
+						data-cycle-timeout=0
 						data-cycle-center-horz=true
 						data-cycle-center-vert=true
 						>
@@ -43,6 +33,17 @@
 				<?php endif; ?>
 				
 				</div>
+				
+				<div class="col-sm-2 col-sm-pull-10">
+					<ul class="projects-menu">
+					<?php global $post; ?>
+					<?php $projects = get_posts(array( 'post_type' => 'project', 'posts_per_page' => -1 )); ?>
+					<?php foreach($projects as $post) : setup_postdata($post); ?>
+						<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+					<?php endforeach; ?>
+					</ul>
+				</div>
+				
 			</div>
 				
 			<div class="row">

@@ -25,7 +25,7 @@ $brand-danger:          #d9534f !default;
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-$body-bg:               #5e5a5b; //rgb(220,220,220);//#fff !default;
+$body-bg:               #5e5e5e; //#5e5a5b; //rgb(220,220,220);//#fff !default;
 //** Global text color on `<body>`.
 $text-color:            #a4a088; //$black; //$gray-dark !default;
 
@@ -34,7 +34,7 @@ $link-color:            $brand-primary !default;
 //** Link hover color set via `darken()` function.
 $link-hover-color:      #d5d1ba; //darken($link-color, 15%) !default;
 //** Link hover decoration.
-$link-hover-decoration: underline !default;
+$link-hover-decoration: none; //underline !default;
 
 
 //== Typography
@@ -414,7 +414,7 @@ $navbar-inverse-toggle-border-color:        #333 !default;
 
 //=== Shared nav styles
 $nav-link-padding:                          10px 15px !default;
-$nav-link-hover-bg:                         $gray-lighter !default;
+$nav-link-hover-bg:                         transparent; //$gray-lighter !default;
 
 $nav-disabled-link-color:                   $gray-light !default;
 $nav-disabled-link-hover-color:             $gray-light !default;

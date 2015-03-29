@@ -17,6 +17,7 @@ sidebars, comments, ect.
 
 add_image_size( 'project-slide', 800, 800 );
 add_image_size( 'project-thumb', 260, 175, true );
+add_image_size( 'home-banner', 380, 516, true );
 
 function tg_page_scripts() {
 	//styles

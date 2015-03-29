@@ -5,16 +5,34 @@
 	<section id="main">
 		<div class="container">
 			
-			<div class="row banner-row">
-				
-			</div>
-			
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-			<div class="row about-row">
-				<div class="col-sm-12">
-				<?php the_content(); ?>
+			
+			<div class="row banner-row">
+				<div class="col-xs-4 col-sm-4">
+					<?php if($banner_one = get_field('home_banner_one')): ?>
+						<?php echo wp_get_attachment_image($banner_one, 'home-banner', 0, array('class'=>'')); ?>
+					<?php endif; ?>
+				</div>
+				<div class="col-xs-4 col-sm-4">
+					<?php if($banner_two = get_field('home_banner_two')): ?>
+						<?php echo wp_get_attachment_image($banner_two, 'home-banner', 0, array('class'=>'')); ?>
+					<?php endif; ?>
+				</div>
+				<div class="col-xs-4 col-sm-4">
+					<?php if($banner_three = get_field('home_banner_three')): ?>
+						<?php echo wp_get_attachment_image($banner_three, 'home-banner', 0, array('class'=>'')); ?>
+					<?php endif; ?>
 				</div>
 			</div>
+			
+			<div class="row about-row">
+				<div class="col-sm-12">
+					<div class="inner">
+						<?php the_content(); ?>
+					</div>
+				</div>
+			</div>
+			
 			<?php endwhile; endif; ?>
 			
 			<div class="row thumb-row">
@@ -37,8 +55,7 @@
 						
 								<div class="col-xs-4 col-sm-3 thumb-column">
 									<div class="thumb">
-										<a href="<?php the_permalink(); ?>"><?php echo the_post_thumbnail('project-thumb'); ?></a>
-										<a href="<?php the_permalink(); ?>"><?php echo $project_title; ?></a><br>
+										<a href="<?php the_permalink(); ?>"><?php echo the_post_thumbnail('project-thumb'); ?><?php echo $project_title; ?></a><br>
 										<?php edit_post_link(); ?>
 									</div>
 								</div>

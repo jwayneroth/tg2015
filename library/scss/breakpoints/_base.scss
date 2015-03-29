@@ -8,6 +8,31 @@ Stylesheet: Base Mobile Stylesheet
 // TG CUSTOM
 //////////////////////
 
+
+
+#header {
+	padding-top: 40px;
+	
+	#logo {
+		display:block;
+		width: 412px;
+		margin: 0 auto;
+		/*text-align:center;
+		font-weight: 300;
+		letter-spacing: 5px;
+		text-transform: uppercase;
+		font-size: floor(($font-size-base * 2.6));*/
+	}
+	#menu-main-menu {
+		a {
+			text-transform: uppercase;
+			text-align: center;
+			font-weight: 300;
+			letter-spacing: 1px;
+		}
+	}
+}
+
 .cycle-slideshow {
 	height: 400px;
 	.slide {
@@ -29,6 +54,41 @@ Stylesheet: Base Mobile Stylesheet
 		height: auto;
 	}
 }
+
+.page-template-page-home {
+	.banner-row {
+		margin-left: -4px;
+		margin-right: -4px;
+		
+		.col-sm-4 {
+			padding-left: 4px;
+			padding-right: 4px;
+		}
+		img {
+			width:100%;
+			height:auto;
+		}
+	}
+	.about-row {
+		margin-top: 40px;
+		margin-bottom: 22px;
+		.inner {
+			padding: 0 1em;
+		}
+	}
+}
+
+.projects-menu {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	
+	li {
+		margin: 0;
+		margin-bottom: 1em;
+	}
+}
+
 //////////////////////
 // GENERAL STYLES
 //////////////////////
@@ -148,7 +208,7 @@ h5, .h5 {
 }
 
 	#logo {
-		margin: 0.75em 0;
+		//margin: 0.75em 0;
 
 		a {
 			//color: $white;

@@ -5,7 +5,7 @@
 		
 			<div class="row">
 				
-				<div class="col-sm-10 col-sm-push-2">
+				<div class="col-sm-10 col-sm-offset-1">
 				
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					<?php $currID = get_the_ID(); ?>
@@ -35,24 +35,13 @@
 						<a href class="cycle-prev"><</a>
 						<div class="cycle-pager"></div>
 						<a href class="cycle-next">></a>
-					
+							
 					</div>
 		
 				<?php endif; ?>
 				
 				</div>
-				
-				<div class="col-sm-2 col-sm-pull-10">
-					<ul class="projects-menu">
-					<?php global $post; ?>
-					<?php $projects = get_posts(array( 'post_type' => 'project', 'posts_per_page' => -1 )); ?>
-					<?php foreach($projects as $post) : setup_postdata($post); ?>
-						<?php $li_class = ( get_the_ID() == $currID ) ? 'active' : ''; ?>
-						<li class="<?php echo $li_class; ?>"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-					<?php endforeach; ?>
-					</ul>
-				</div>
-				
+		
 			</div>
 				
 			<div class="row">

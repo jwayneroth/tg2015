@@ -36,6 +36,11 @@ Stylesheet: Base Mobile Stylesheet
 	}
 }
 
+#main, 
+.main {
+	padding-bottom: 5em;
+}
+
 #contact-main {
 	h5 {
 		border-bottom: 1px solid $text-color;
@@ -44,7 +49,7 @@ Stylesheet: Base Mobile Stylesheet
 
 .cycle-slideshow {
 	text-align:center; 
-	background-color: rgb(104,104,104);
+	//background-color: rgb(104,104,104);
 	height: 400px;
 	margin-bottom: 4em;
 	
@@ -77,9 +82,10 @@ Stylesheet: Base Mobile Stylesheet
 }
 
 .thumb {
-	height: 200px;
+	//height: 260px;
 	
 	img {
+		display: block;
 		width: 100%;
 		height: auto;
 	}
@@ -126,7 +132,6 @@ Stylesheet: Base Mobile Stylesheet
 }
 
 #footer {
-	padding: 2em 0;
 }
 
 //////////////////////

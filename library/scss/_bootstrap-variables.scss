@@ -25,14 +25,14 @@ $brand-danger:          #d9534f !default;
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-$body-bg:               #5e5e5e; //#5e5a5b; //rgb(220,220,220);//#fff !default;
+$body-bg:               $white; //#5e5a5b; //rgb(220,220,220);//#fff !default;
 //** Global text color on `<body>`.
-$text-color:            #a4a088; //$black; //$gray-dark !default;
+$text-color:            $tg-gray; //#a4a088; //$black; //$gray-dark !default;
 
 //** Global textual link color.
-$link-color:            $brand-primary !default;
+$link-color:             $tg-gray; //$brand-primary !default;
 //** Link hover color set via `darken()` function.
-$link-hover-color:      #d5d1ba; //darken($link-color, 15%) !default;
+$link-hover-color:      darken($link-color, 25%); //darken($link-color, 15%) !default;
 //** Link hover decoration.
 $link-hover-decoration: none; //underline !default;
 

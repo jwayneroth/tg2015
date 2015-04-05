@@ -36,7 +36,7 @@ body#tinymce.wp-editor {
   width: 731px;
   font-size: 100%;
   line-height: 1.5;
-  color: #a4a088;
+  color: #706d5d;
   -webkit-font-smoothing: antialiased;
   /*********************
 	LINK STYLES
@@ -174,7 +174,7 @@ body#tinymce.wp-editor .size-thumbnail {
 }
 /* line 174, ../scss/editor-style.scss */
 body#tinymce.wp-editor pre {
-  background: #323944;
+  background: #000000;
   color: #f8f9fa;
   font-size: 0.9em;
   padding: 1.5em;

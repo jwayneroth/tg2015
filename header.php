@@ -31,7 +31,7 @@
 			<div class="container">
 				
 				<!--<a id="logo" class="" href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a>-->
-				<a href="<?php echo home_url(); ?>" rel="nofollow" id="logo"><img src="<?php echo get_template_directory_uri(); ?>/library/images/tamzin-greenhill.png" alt="Tamzin Greenhill" width="412" height="15" itemscope itemtype="http://schema.org/Organization"></a>
+				<a href="<?php echo home_url(); ?>" rel="nofollow" id="logo"><img src="<?php echo get_template_directory_uri(); ?>/library/images/tamzin-greenhill.png" alt="Tamzin Greenhill" width="454" height="15" itemscope itemtype="http://schema.org/Organization"></a>
 				
 				<nav class="navbar navbar-center" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 					<div class="navbar-inner">

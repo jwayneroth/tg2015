@@ -15,6 +15,29 @@ upon your base.scss styles.
 
 ******************************************************************/
 
+
+//////////////////////
+// TG CUSTOM
+//////////////////////
+
+#header {
+	padding-top: 40px;
+	
+	#logo {
+		display:block;
+		width: 454px; //412px;
+		margin: 0 auto;
+		/*text-align:center;
+		font-weight: 300;
+		letter-spacing: 5px;
+		text-transform: uppercase;
+		font-size: floor(($font-size-base * 2.6));*/
+		
+		img {
+		}
+	}
+}
+
 .cycle-slideshow {
 	height: 400px;
 }

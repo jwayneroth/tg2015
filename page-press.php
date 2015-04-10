@@ -10,15 +10,18 @@
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					<?php $currID = get_the_ID(); ?>
 					<?php if( have_rows('project_gallery') ): ?>
-
-					<div class="cycle-slideshow" id="project-slideshow" 
-						data-cycle-log="false" 
+					
+					<div class="slideshow-wrapper">
+					<div class="cycle-slideshow" id="press-slideshow" 
+							data-cycle-log="false" 
 						data-cycle-slides=".slide"
 						data-cycle-timeout=5000
 						data-cycle-center-horz=true
-						data-cycle-center-vert=true
+						
 						data-cycle-pause-on-hover=true
-						data-cycle-pager-template="<a href>{{slideNum}}</a>"
+						data-cycle-auto-height="-1"
+						data-cycle-prev=".project-prev"
+						data-cycle-next=".project-next"
 						>
 					
 					<?php while( have_rows('project_gallery') ): the_row(); ?> 
@@ -30,14 +33,16 @@
 						</div>
 
 					<?php endwhile; ?>
-						
-						
-						<a href class="cycle-prev"><</a>
-						<div class="cycle-pager"></div>
-						<a href class="cycle-next">></a>
-							
+	
+						<!--<div class="cycle-pager"></div>-->
+				
 					</div>
-		
+					
+					<a href class="cycle-prev project-prev"><</a>
+					<a href class="cycle-next project-next">></a>
+					
+					</div>
+					
 				<?php endif; ?>
 				
 				</div>

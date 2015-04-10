@@ -2,6 +2,15 @@
 // TG CUSTOM
 //////////////////////
 
+#header #text-logo:hover,
+#header #text-logo:active {
+	font-weight: 300 !important;
+}
+a:hover,
+a:active {
+	font-weight: 400 !important;
+}
+
 .navbar-center .nav,
 .navbar-center .nav > li {
 	float:none;
@@ -23,6 +32,27 @@
 	.about-row {
 		.inner {
 			padding: 0 5em;
+		}
+	}
+}
+
+.cycle-prev,
+.cycle-next {
+	position:absolute;
+	left: -20px;
+	top: 40%;
+	bottom:auto;
+	font-size: 2.5em;
+	font-weight: lighter;
+}
+.cycle-next { left:auto; right:-20px; }
+.cycle-pager {
+	display:inline-block;
+	a {
+		padding: 0 .5em;
+		
+		&.cycle-pager-active {
+			color: $link-hover-color;
 		}
 	}
 }

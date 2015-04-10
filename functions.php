@@ -15,7 +15,7 @@ sidebars, comments, ect.
 //
 //////////////////////////////
 
-add_image_size( 'project-slide', 800, 800 );
+add_image_size( 'project-slide', 9999, 800 );
 add_image_size( 'project-thumb', 260, 260, true );//260, 175, true );
 add_image_size( 'home-banner', 380, 516, true );
 

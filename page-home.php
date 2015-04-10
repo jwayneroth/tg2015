@@ -53,7 +53,7 @@
 							<?php $thumb_src = wp_get_attachment_image_src( $featured_img_id, 'project-thumb' ); ?>
 							<?php $project_title = get_the_title(); ?>
 						
-								<div class="col-xs-4 col-sm-3 thumb-column">
+								<div class="col-xs-4 col-sm-4 thumb-column">
 									<div class="thumb">
 										<a href="<?php the_permalink(); ?>"><?php echo the_post_thumbnail('project-thumb'); ?><?php echo $project_title; ?></a><br>
 										<?php edit_post_link(); ?>
@@ -61,10 +61,6 @@
 								</div>
 								
 							<?php $cnt++; ?>
-						
-							<?php if($cnt == 3) : ?>
-							<div class="clearfix visible-xs-block"></div>
-							<?php endif; ?>
 							
 						<?php endif; ?>
 					<?php endforeach; ?>

@@ -21,7 +21,16 @@ upon your base.scss styles.
 //////////////////////
 
 #header {
-	padding-top: 40px;
+	
+	#text-logo {
+		display:block;
+		text-align:center;
+		text-transform: uppercase;
+		letter-spacing:1em;
+		font-size: ceil(($font-size-base * 1.5));
+		line-height: ceil(($font-size-base * 1.5));
+		font-weight:300;
+	}
 	
 	#logo {
 		display:block;
@@ -41,7 +50,9 @@ upon your base.scss styles.
 .cycle-slideshow {
 	height: 400px;
 }
-
+#press-slideshow {
+	height: 250px;
+}
 /*
 IMPORTANT NOTE ABOUT SASS 3.3 & UP
 You can't use @extend within media queries

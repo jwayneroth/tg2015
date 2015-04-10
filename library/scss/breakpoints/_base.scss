@@ -123,11 +123,15 @@ Stylesheet: Base Mobile Stylesheet
 
 .thumb {
 	//height: 260px;
+	margin-bottom:3.5em;
+	text-align: center;
+	letter-spacing: .15em;
 	
 	img {
 		display: block;
 		width: 100%;
 		height: auto;
+		margin-bottom:.8em;
 	}
 }
 

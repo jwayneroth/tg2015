@@ -2,11 +2,36 @@
 
 <?php get_header(); ?>
 
-	<section id="main">
-		<div class="container">
+<script>
+if ( !get_cookie( 'landing_seen' ) ) {
+	//window.location = "/landing";
+}else{ document.body.className += " landing-seen"; }
+</script>
+
+
 			
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			
+			<?php if( have_rows('landing_words') ): ?>
+					<div id="home-landing">
+					<?php $total_words = count(get_field('landing_words')); ?>
+					<?php $word_count = 1; ?>
+					<?php while( have_rows('landing_words') ): the_row(); ?> 
+						
+						<?php $word_class = ($word_count == $total_words) ? 'last-word' : ''; ?>
+						<h1 class="landing-word <?php echo $word_class; ?>"><?php echo get_sub_field('landing_words_word'); ?></h1>
+						
+						<?php $word_count++; ?>
+						
+					<?php endwhile; ?>
+					</div>
+			<?php endif; ?>
+			
+<section id="main" class="home-main">
+	<div class="container">
+		
+			
+				
 			<div class="row banner-row">
 				<div class="col-xs-4 col-sm-4">
 					<?php if($banner_one = get_field('home_banner_one')): ?>
@@ -33,8 +58,14 @@
 				</div>
 			</div>
 			
-			<?php endwhile; endif; ?>
+			<?php endwhile; else : ?>
 			
+<section id="main" class="home-main">
+	<div class="container">
+	
+			<?php endif; ?>
+
+
 			<div class="row thumb-row">
 				<div class="col-xs-12 col-md-12">
 					<div id="thumb-wrapper">

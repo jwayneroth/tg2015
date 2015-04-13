@@ -21,7 +21,7 @@ jQuery(document).ready(function($) {
 					.delay(200)
 					.fadeOut(200, function() {
 						if( $(el).hasClass('last-word') ) {
-							create_cookie('landing_seen', 'true', 30);
+							create_cookie('landing_seen', 'true', 1);
 							//location = '/';
 							$('body').addClass('landing-seen');
 						}

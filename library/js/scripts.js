@@ -13,7 +13,7 @@ function create_cookie(name, value, days) {
 */
 jQuery(document).ready(function($) {
 
-	if( $('.home-main').length && !$('body').hasClass('landing-seen') ) {
+	/*if( $('.home-main').length && !$('body').hasClass('landing-seen') ) {
 		$('.landing-word').each(function(index, el) {
 			setTimeout(function() {
 				$(el)
@@ -28,5 +28,5 @@ jQuery(document).ready(function($) {
 					});
 			}, index*450);
 		});
-	}
+	}*/
 }); /* end of as page load scripts */

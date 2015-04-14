@@ -16,7 +16,6 @@
 							data-cycle-log="false" 
 						data-cycle-slides=".slide"
 						data-cycle-timeout=5000
-						data-cycle-center-horz=true
 						data-cycle-speed="800"
 						data-cycle-pause-on-hover=true
 						data-cycle-auto-height="-1"

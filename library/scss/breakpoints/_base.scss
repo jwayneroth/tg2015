@@ -76,10 +76,13 @@ Stylesheet: Base Mobile Stylesheet
 	.slide {
 		display:none;
 		height: 100%;
+		width:100%;
 		overflow: hidden;
 		//max-width:100%;
 		
 		img {
+			display:block;
+			margin: 0 auto;
 			//width: auto;
 			//height: auto;
 			//max-width: 100%;
@@ -125,7 +128,7 @@ Stylesheet: Base Mobile Stylesheet
 	//height: 260px;
 	margin-bottom:3.5em;
 	text-align: center;
-	letter-spacing: .12em;
+	letter-spacing: .09em;
 	
 	img {
 		display: block;
@@ -162,6 +165,7 @@ Stylesheet: Base Mobile Stylesheet
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
+	text-align:center;
 	
 	li {
 		margin: 0;
@@ -185,7 +189,7 @@ Stylesheet: Base Mobile Stylesheet
 
 .page-template-page-home {
 	#header, #main, #footer { 
-		display:none; 
+		//display:none; 
 	}
 	&.landing-seen {
 		#header, #main, #footer { 

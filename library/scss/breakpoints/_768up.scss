@@ -1,7 +1,18 @@
+
+
 //////////////////////
 // TG CUSTOM
 //////////////////////
 
+#header {
+	
+	#text-logo {
+		letter-spacing:1.4em;
+		font-size: ceil(($font-size-base * 1.5));
+		line-height: ceil(($font-size-base * 1.5));
+	}
+
+}
 #header #text-logo:hover,
 #header #text-logo:active {
 	font-weight: 300 !important;
@@ -22,6 +33,19 @@ a:active {
 
 .navbar-center .navbar-inner {
 	text-align:center;
+}
+
+#menu-main-menu {
+	a {
+		padding-left: 68px;
+		padding-right:68px;
+	}
+	li:first-child a {
+		padding-left:20px;
+	}
+	li:last-child a {
+		padding-right:20px;
+	}
 }
 
 .cycle-slideshow {
@@ -73,6 +97,22 @@ a:active {
 
 }
 
+//////////////
+// PROJECT PAGE
+////////////
+
+.single-project {
+	#header {
+		
+		#text-logo {
+			white-space: nowrap;
+		}
+		.header-inner {
+			width: 83.33333%;
+			left:16.66666%;
+		}
+	}
+}
 /*********************
 GENERAL STYLES
 *********************/

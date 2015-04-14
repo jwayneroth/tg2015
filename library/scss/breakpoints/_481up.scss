@@ -23,13 +23,9 @@ upon your base.scss styles.
 #header {
 	
 	#text-logo {
-		display:block;
-		text-align:center;
-		text-transform: uppercase;
 		letter-spacing:1em;
 		font-size: ceil(($font-size-base * 1.5));
 		line-height: ceil(($font-size-base * 1.5));
-		font-weight:300;
 	}
 	
 	#logo {

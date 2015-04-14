@@ -45,7 +45,7 @@
 
 		<header id="header" itemscope itemtype="http://schema.org/WPHeader">
 			<div class="container">
-				
+				<div class="row"><div class="col-xs-12 header-inner">
 				<a id="text-logo" class="" href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a>
 				<!--<a href="<?php echo home_url(); ?>" rel="nofollow" id="logo"><img src="<?php echo get_template_directory_uri(); ?>/library/images/tamzin-greenhill.png" alt="Tamzin Greenhill" width="454" height="15" itemscope itemtype="http://schema.org/Organization"></a>-->
 				
@@ -67,5 +67,5 @@
 					</div>
 				</nav>
 				
-			</div>
+			</div></div></div>
 		</header>

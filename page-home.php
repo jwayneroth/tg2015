@@ -58,6 +58,7 @@
 					<div id="thumb-wrapper">
 
 					<?php $posts = get_posts(array( 'post_type' => 'project', 'posts_per_page' => -1 )); ?>
+					<?php $total = count($post); ?>
 					<?php $cnt = 0; ?>
 					<?php foreach($posts as $post) : setup_postdata($post); ?>
 						
@@ -78,7 +79,9 @@
 									</div>
 								</div>
 								
-							<?php $cnt++; ?>
+							<?php $cnt++; if($cnt>=3 && $cnt != ($total-1)) : ?>
+							</div>
+							<?php $cnt = 0; endif; ?>
 							
 						<?php endif; ?>
 					<?php endforeach; ?>

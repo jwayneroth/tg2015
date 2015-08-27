@@ -92,6 +92,7 @@ Stylesheet: Base Mobile Stylesheet
 			height: 100%;
 			width: auto;
 		}
+		&:first { display:block; }
 	}
 }
 #press-slideshow {

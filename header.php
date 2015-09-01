@@ -22,22 +22,6 @@
     <meta name="theme-color" content="#121212">
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 		<?php wp_head(); ?>
-		<script>
-			function get_cookie(name) {
-				 var nameEQ = name + "=";
-				 var ca = document.cookie.split(';');
-				 for (var i = 0; i < ca.length; i++) {
-						 var c = ca[i];
-						 while (c.charAt(0) === ' ') {
-								 c = c.substring(1, c.length);
-						 }
-						 if (c.indexOf(nameEQ) === 0) {
-								 return c.substring(nameEQ.length, c.length);
-						 }
-				 }
-				 return null;
-			}
-		</script>
 		<?php // drop Google Analytics Here ?>
 	</head>
 
@@ -45,27 +29,28 @@
 
 		<header id="header" itemscope itemtype="http://schema.org/WPHeader">
 			<div class="container">
-				<div class="row"><div class="col-xs-12 header-inner">
-				<a id="text-logo" class="" href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a>
-				<!--<a href="<?php echo home_url(); ?>" rel="nofollow" id="logo"><img src="<?php echo get_template_directory_uri(); ?>/library/images/tamzin-greenhill.png" alt="Tamzin Greenhill" width="454" height="15" itemscope itemtype="http://schema.org/Organization"></a>-->
+				<div class="row">
 				
-				<nav class="navbar navbar-center" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
-					<div class="navbar-inner">
-						<?php wp_nav_menu(array(
-										'container' => false,                            // remove nav container
-										'container_class' => 'menu',                  // class of container (should you choose to use it)
-										'menu' => __( 'The Main Menu', 'bonestheme' ),   // nav name
-										'menu_class' => 'nav navbar-nav top-nav',                // adding custom nav class
-										'theme_location' => 'main-nav',                  // where it's located in the theme
-										'before' => '',                                  // before the menu
-											'after' => '',                                   // after the menu
-											'link_before' => '',                             // before each link
-											'link_after' => '',                              // after each link
-											'depth' => 0,                                    // limit the depth of the nav
-											'fallback_cb' => ''                              // fallback function (if there is one)
-						)); ?>
+					<?php if ( is_singular('project') ): ?>
+					<div class="col-sm-10 col-sm-push-2">
+					<?php else: ?>
+					<div class="col-xs-12 header-inner">
+					<?php endif; ?>
+					
+						<a id="text-logo" class="" href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a>
+				
+						<nav class="navbar navbar-center" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+							<div class="navbar-inner">
+								<?php wp_nav_menu(array(
+									'container' => false,
+									'menu' => __( 'The Main Menu', 'bonestheme' ),
+									'menu_class' => 'nav navbar-nav top-nav',
+									'theme_location' => 'main-nav'
+								)); ?>
+							</div>
+						</nav>
+				
 					</div>
-				</nav>
-				
-			</div></div></div>
+				</div>
+			</div>
 		</header>

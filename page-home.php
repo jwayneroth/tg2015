@@ -2,12 +2,6 @@
 
 <?php get_header(); ?>
 
-<script>
-/*if ( !get_cookie( 'landing_seen' ) ) {
-	//window.location = "/landing";
-}else{ document.body.className += " landing-seen"; }*/
-</script>
-
 <section id="main" class="home-main">
 	<div class="container">
 			
